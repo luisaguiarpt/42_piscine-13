@@ -1,22 +1,16 @@
-
 #include <stdlib.h>
 
 int	*ft_map(int *tab, int length, int(*f)(int))
 {
 	int	i;
 	int	*mapped;
-	int	*tmp;
 
-	if (!(mapped = malloc(length * sizeof(int *))))
+	i = -1;
+	if (!(mapped = malloc(length * sizeof(int))))
 		return (NULL);
-	tmp = mapped;
-	while (i < length)
-	{
-		if (!(mapped = malloc(sizeof(int))))
-			return (NULL);
-		*(mapped++) = (*f)(tab[i++]);
-	}
-	return (tmp);
+	while (++i < length)
+		mapped[i] = (*f)(tab[i]);
+	return (mapped);
 }
 
 int	mult_42(int n)

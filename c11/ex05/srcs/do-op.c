@@ -43,14 +43,6 @@ int	do_op(int a, int b, char *op)
 		return ((*operations[1])(a, b));
 	if (*op == '*')
 		return ((*operations[2])(a, b));
-	if (b == 0)
-	{
-		if (*op == '/')
-			ft_putstr(DIV_ZERO);
-		if (*op == '%')
-			ft_putstr(MOD_ZERO);
-		return (0);
-	}
 	if (*op == '/')
 		return ((*operations[3])(a, b));
 	if (*op == '%')
@@ -61,5 +53,5 @@ int	do_op(int a, int b, char *op)
 void	ft_putstr(char *str)
 {
 	while (*str)
-		write(1, str++, 1);
+		write(2, str++, 1);
 }

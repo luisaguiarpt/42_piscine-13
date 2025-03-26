@@ -21,6 +21,10 @@ set hlsearch       "Use highlighting when doing a search
 " inorep mappings
 " Creates properly formatted curly braces
 inoremap {<CR> {<CR>}<Esc>O
+" Maps CAPSLOCK to act as ESC in all modes
+inoremap <CapsLock> <Esc>
+nnoremap <CapsLock> <Esc>
+vnoremap <CapsLock> <Esc>
 
 hi Normal guibg=NONE ctermbg=NONE     "Keep vim transparency
 highlight CursorLine ctermbg=darkgrey cterm=bold	"highlight row with foreground background and style as defined
